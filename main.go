@@ -10,7 +10,7 @@ func main() {
 	// Run Mannually
 	app.Run.FetchCoinsMarketValue()
 
-	// Run Agent
+	// Fetch data every 4 hours
 	app.Agent.Schedule(4, app.Hour, app.Agent.Service.FetchCoinsMarketValue)
 	app.Agent.Start()
 }

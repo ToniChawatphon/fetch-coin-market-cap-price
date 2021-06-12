@@ -26,7 +26,7 @@ func (s *Scheduler) Schedule(number uint64, timeframe string, task interface{}) 
 		gocron.Every(number).Weeks().Do(task)
 	}
 	_, time := gocron.NextRun()
-	log.Printf("- execute at: %v\n", time)
+	log.Printf("- next execute at: %v\n", time)
 }
 
 func (s *Scheduler) ScheduleEvery(timeframe string, time string, task interface{}) {
