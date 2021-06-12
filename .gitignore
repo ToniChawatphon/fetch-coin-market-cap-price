@@ -1,0 +1,5 @@
+.DS_Store
+.backup
+out/*.json
+config/service_account.json
+script/
