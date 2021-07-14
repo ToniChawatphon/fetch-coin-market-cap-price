@@ -31,3 +31,22 @@ func (s *Service) FetchCoinsMarketValue() {
 
 	WriteRequestBodyToFile(OutJson, data)
 }
+
+func (s *Service) GetCoinMetaData(coin string) {
+	log.Printf("Get %v metadata\n", coin)
+	for _, c := range *s.api.Coins.Data {
+		if coin == c.Symbol {
+			log.Printf("- Name: %v\n", c.Name)
+			log.Printf("- Symbol: %v\n", c.Symbol)
+			log.Printf("- Volume24h: %v\n", c.Quote.USD.Volume24h)
+			log.Printf("- PercentChange1h: %v\n", c.Quote.USD.PercentChange1h)
+			log.Printf("- PercentChange24h: %v\n", c.Quote.USD.PercentChange24h)
+			log.Printf("- PercentChange7d: %v\n", c.Quote.USD.PercentChange7d)
+			log.Printf("- PercentChange30d: %v\n", c.Quote.USD.PercentChange30d)
+			log.Printf("- PercentChange60d: %v\n", c.Quote.USD.PercentChange60d)
+			log.Printf("- PercentChange90d: %v\n", c.Quote.USD.PercentChange90d)
+			log.Printf("- MarketCap: %v\n", c.Quote.USD.MarketCap)
+			log.Printf("- LastUpdated: %v\n", c.Quote.USD.LastUpdated)
+		}
+	}
+}
