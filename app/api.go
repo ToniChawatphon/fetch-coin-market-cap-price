@@ -40,7 +40,7 @@ func (a *API) GetMarketPrice(uri string) (*http.Response, *http.Request) {
 		os.Exit(1)
 	}
 
-	log.Println("- status", res.Status)
+	log.Printf("- status %v\n", res.Status)
 
 	return res, req
 }

@@ -11,7 +11,7 @@ func main() {
 	app.Run.FetchCoinsMarketValue()
 	app.Run.GetCoinMetaData("ETH")
 
-	// // Fetch data every 4 hours
-	// app.Agent.Schedule(4, app.Hour, app.Agent.Service.FetchCoinsMarketValue)
-	// app.Agent.Start()
+	// Fetch data every 4 hours
+	app.Agent.Schedule(4, app.Hour, app.Agent.Service.FetchCoinsMarketValue)
+	app.Agent.Start()
 }
